@@ -1,0 +1,16 @@
+.navbar {
+  position: relative;
+  background-color: transparent;
+  z-index: 999;
+}
+.navbar .image-logo {
+  padding-left: 18px;
+  padding-top: 8px;
+  width: 8em;
+}
+.navbar .user-img {
+  padding-right: 18px;
+  padding-top: 18px;
+  width: 3em;
+  float: right;
+}/*# sourceMappingURL=navbar.css.map */

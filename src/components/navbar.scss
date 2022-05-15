@@ -1,0 +1,21 @@
+// Css variables
+$logo-clr:#e50914;
+
+.navbar{
+    position: relative;
+    background-color: transparent;
+    z-index: 999;
+    .image-logo{
+        padding-left: 18px;
+        padding-top: 8px;
+        width: 8em;
+    }
+    .user-img{
+        padding-right: 18px;
+        padding-top: 18px;
+        width: 3em;
+        float: right;
+    }
+}
+
+
