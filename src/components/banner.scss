@@ -12,7 +12,9 @@
 
     }
     .details{
-        color: white;
+        color: hsl(357°, 0%, 90%);
+        padding: 15px;
+        text-align: left;
         .h2, .text{
             padding-bottom: 15px;
         }
@@ -32,7 +34,7 @@
         grid-template-columns: 100%;
         .details{
             padding: 5px;
-            margin-top: -20em;
+            margin-top: -12em;
             width: 100%;
         }
     }
@@ -41,7 +43,7 @@
 .err{
     display: grid;
     place-items: center;
-    color: white;
+    color: hsl(357°, 2%, 90%);
     font-size: 2rem;
     font-weight: 700;
     padding: 25px;

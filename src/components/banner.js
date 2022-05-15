@@ -3,6 +3,7 @@ import './banner.css'
 import anime from 'animejs'
 
 function Banner(props) {
+  // Animation
   const animateref = useRef(null)
   useEffect(() =>{
     animateref.current = anime({
@@ -29,6 +30,8 @@ function Banner(props) {
 
     let movie_name = props.input
 
+    useEffect(() =>{
+      
     axios.get(`https://omdbapi.com/?t=${movie_name}&apikey=5c3132de`).then(response =>{
       if (response.data.Response !== "False"){
         setavail(true)
@@ -45,9 +48,12 @@ function Banner(props) {
       setwriter(response.data.Writer)
       setrating(response.data.imdbRating)
     })
+
+    }, [])
+
     if (!available){
       return(
-        <div className='err'><span className='oops'>Oops!</span> It looks like you are searching for a inavalid movie</div>
+        <div className='err'><span className='oops'>Oops!</span> It looks like you are searching for a invalid movie</div>
       )
     }
     return(

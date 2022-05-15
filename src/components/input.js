@@ -8,7 +8,10 @@ function Input() {
     const [input, setinput] = useState("")
     const [enter, setstate] = useState(false);
 
+    // Animation
+
     const animationRef = useRef(null);
+    const buttonelement = useRef();
     useEffect(() =>{
         animationRef.current = anime.timeline({
             duration:1500,
@@ -17,7 +20,14 @@ function Input() {
         animationRef.current.add({
             targets: '.hero-tag',
             translateY: [-350,0],
-        })      
+        });
+        
+        // buttonelement.onClick = () =>{
+        //     buttonelement.current = anime({
+        //         targets: '.button-submit',
+        //         translateY: [0,300]
+        //     })
+        // }
     }, [])
     
   return (
@@ -29,7 +39,7 @@ function Input() {
         <p><svg width="85" height="34" viewBox="0 0 85 34" className='svg' fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M1 8.99999C1 8.99999 11 1.99999 26 0.999993C41 -7.36117e-06 38.1246 20.8031 51 24C63.0453 26.9908 82 17 82 17" stroke="white"/>
     <path d="M64 8.78889L82.3416 17.4811" stroke="white" strokeLinecap="round"/>
-    <path d="M81.7177 18L73 33" stroke="white" stroke-linecap="round"/>
+    <path d="M81.7177 18L73 33" stroke="white" strokeLinecap="round"/>
     </svg> <input placeholder='Eg: Squid Game' autoComplete='off' className='text-field' value={input} onChange={(e) =>{
         setinput(e.target.value)}} onKeyDown={(e) =>{
             if (e.key === 'Enter'){
@@ -38,7 +48,13 @@ function Input() {
                 setstate(false)
             }
         }}></input></p> 
-        <div> <button className='button-submit' onClick={() =>{
+        <div> <button className='button-submit' ref={buttonelement} onClick={() =>{
+            buttonelement.current.style.backgroundImage = 'none'
+            buttonelement.current = anime({
+                targets: '.button-submit',
+                backgroundColor: '#617812',
+                duration: 1200
+        })
             setstate(true)
         }}>Submit</button></div>
     </div>

@@ -26,3 +26,10 @@ html{
   scroll-behavior: smooth;
 }
 
+.intro{
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+}

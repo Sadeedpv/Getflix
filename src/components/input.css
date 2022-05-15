@@ -2,7 +2,7 @@
   display: grid;
   place-items: center;
   margin-top: 9em;
-  margin-bottom: 14em;
+  margin-bottom: 6em;
 }
 .hero .hero-tag {
   font-size: 5rem;
@@ -14,10 +14,11 @@
   opacity: 70%;
   color: white;
   padding-bottom: 2em;
+  text-align: center;
 }
 .hero .svg {
   position: relative;
-  left: -20px;
+  left: -40px;
 }
 .hero .text-field {
   width: 60em;
@@ -30,7 +31,6 @@
   box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 .hero .text-field:focus {
-  outline-color: red;
   border-color: red;
 }
 
@@ -44,7 +44,7 @@
   margin: 2em 0em 2em 0em;
   color: white;
   text-align: center;
-  background: linear-gradient(150deg, #e50914, #f37732, #ffb56b);
+  background-image: linear-gradient(150deg, #e50914, #f37732, #ffb56b);
   box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
   outline: none;
   border: none;
@@ -57,7 +57,11 @@
 }
 @media all and (max-width: 550px) {
   .hero .text-field {
-    width: 25em;
-    margin-right: 40px;
+    width: 22em;
+    margin-left: -70px;
+  }
+
+  .hero .svg {
+    left: -70px;
   }
 }/*# sourceMappingURL=input.css.map */
