@@ -13,21 +13,17 @@ function Input() {
     const animationRef = useRef(null);
     const buttonelement = useRef();
     useEffect(() =>{
-        animationRef.current = anime.timeline({
-            duration:1500,
-            delay:1000,
-        })
-        animationRef.current.add({
-            targets: '.hero-tag',
-            translateY: [-350,0],
-        });
-        
-        // buttonelement.onClick = () =>{
-        //     buttonelement.current = anime({
-        //         targets: '.button-submit',
-        //         translateY: [0,300]
-        //     })
-        // }
+        if (window.innerWidth > 992){
+            animationRef.current = anime.timeline({
+                duration:1500,
+                delay:1000,
+            })
+            animationRef.current.add({
+                targets: '.hero-tag',
+                translateY: [-350,0],
+            });
+        }
+
     }, [])
     
   return (
@@ -49,13 +45,13 @@ function Input() {
             }
         }}></input></p> 
         <div> <button className='button-submit' ref={buttonelement} onClick={() =>{
+            setstate(!enter)
             buttonelement.current.style.backgroundImage = 'none'
             buttonelement.current = anime({
-                targets: '.button-submit',
-                backgroundColor: '#617812',
-                duration: 1200
-        })
-            setstate(true)
+            targets: '.button-submit',
+            backgroundColor: '#617812',
+            duration: 1200
+    })
         }}>Submit</button></div>
     </div>
     {enter && <Banner input={input}/>}
