@@ -40,13 +40,16 @@ function Input() {
         setinput(e.target.value)}} onKeyDown={(e) =>{
             if (e.key === 'Enter'){
                 setstate(true)
+                document.documentElement.scrollTop = 10000
+
             }else{
                 setstate(false)
             }
         }}></input></p> 
         <div> <button className='button-submit' ref={buttonelement} onClick={() =>{
             setstate(!enter)
-            buttonelement.current.style.backgroundImage = 'none'
+            document.documentElement.scrollTop = 10000
+            buttonelement.current.style.background = 'none'
             buttonelement.current = anime({
             targets: '.button-submit',
             backgroundColor: '#617812',
