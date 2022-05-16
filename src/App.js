@@ -2,6 +2,7 @@ import Input from './components/input';
 import Navbars from './components/navbar';
 import ReactLoading from "react-loading";
 import { useEffect, useState } from 'react';
+import Footer from './components/footer';
 
 function App() {
   const [intro, setintro] = useState(true)
@@ -21,6 +22,7 @@ function App() {
     <>
     <Navbars />
     <Input />
+    <Footer />
     </> 
   );
 }
