@@ -35,6 +35,11 @@ function Banner(props) {
 
     let movie_name = props.input
 
+    var opts = {
+      width: '500',
+      height: '400'
+    }
+
     useEffect(() =>{
       
     axios.get(`https://omdbapi.com/?t=${movie_name}&apikey=5c3132de`).then(response =>{
@@ -82,7 +87,7 @@ function Banner(props) {
             <p className='text dark'>Genre: {genre}</p>
             <p className='text dark'>Director: {director}</p>
             <p className='text dark'>Writer: {writer}</p>
-            <div className='video'><YouTube videoId={id} width='100%' height='100%'/></div>
+            <div className='video'><YouTube videoId={id} opts={opts}/></div>
           </div>
       </div> </>      
     )
