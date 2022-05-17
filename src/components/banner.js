@@ -1,6 +1,9 @@
+// Import tags
+
 import React, { useEffect, useRef, useState } from 'react'
 import './banner.css'
 import anime from 'animejs'
+import YouTube from 'react-youtube'
 
 function Banner(props) {
   // Animation
@@ -28,6 +31,8 @@ function Banner(props) {
 
     const [available, setavail] = useState(false)
 
+    const [id, setid] = useState()
+
     let movie_name = props.input
 
     useEffect(() =>{
@@ -48,9 +53,14 @@ function Banner(props) {
       setwriter(response.data.Writer)
       setrating(response.data.imdbRating)
     })
+    },[])
 
+    useEffect(() =>{
+      axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${movie_name}%20trailer&key=AIzaSyD-OaCm8Xp5Z2i5Zj_axzCH2rcn9g6BH-o`).then(response =>{
+        setid(response.data.items[0].id.videoId)
+  
+      }) 
     }, [])
-
     if (!available){
       return(
         <div className='err'><span className='oops'>Oops!</span> It looks like you are searching for a invalid movie</div>
@@ -72,6 +82,7 @@ function Banner(props) {
             <p className='text dark'>Genre: {genre}</p>
             <p className='text dark'>Director: {director}</p>
             <p className='text dark'>Writer: {writer}</p>
+            <YouTube videoId={id} width='100%' height='100%' className='video'/>
           </div>
       </div> </>      
     )
