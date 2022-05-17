@@ -82,7 +82,7 @@ function Banner(props) {
             <p className='text dark'>Genre: {genre}</p>
             <p className='text dark'>Director: {director}</p>
             <p className='text dark'>Writer: {writer}</p>
-            <YouTube videoId={id} width='100%' height='100%' className='video'/>
+            <div className='video'><YouTube videoId={id} width='100%' height='100%'/></div>
           </div>
       </div> </>      
     )

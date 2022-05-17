@@ -23,8 +23,8 @@
 }
 
 .video {
-  width: 75%;
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
 
 @media all and (max-width: 776px) {
