@@ -42,7 +42,7 @@ function Banner(props) {
 
     useEffect(() =>{
       
-    axios.get(`https://omdbapi.com/?t=${movie_name}&apikey=5c3132de`).then(response =>{
+    axios.get(`https://omdbapi.com/?t=${movie_name}&apikey=${process.env.REACT_APP_API_KEY1}`).then(response =>{
       if (response.data.Response !== "False"){
         setavail(true)
       }else{
@@ -61,10 +61,14 @@ function Banner(props) {
     },[])
 
     useEffect(() =>{
-      axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${movie_name}%20trailer&key=AIzaSyD-OaCm8Xp5Z2i5Zj_axzCH2rcn9g6BH-o`).then(response =>{
+      axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${movie_name}%20trailer&key=${process.env.REACT_APP_API_KEY2}`).then(response =>{
         setid(response.data.items[0].id.videoId)
   
-      }) 
+      }).catch((err) =>{
+        if (err.code === "ERR_BAD_REQUEST"){
+          setid(false) 
+        }
+      })
     }, [])
     if (!available){
       return(
@@ -87,6 +91,7 @@ function Banner(props) {
             <p className='text dark'>Genre: {genre}</p>
             <p className='text dark'>Director: {director}</p>
             <p className='text dark'>Writer: {writer}</p>
+            {id === false && <p className='text'>Sorry trailer is not available at the moment</p>}
             <div className='video'><YouTube videoId={id} opts={opts}/></div>
           </div>
       </div> </>      
