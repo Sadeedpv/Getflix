@@ -1,0 +1,18 @@
+.footer{
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: hsl(0, 33%, 99%);
+    line-height: 2;
+    opacity: 60%;
+}
+
+p{
+    white-space:nowrap;
+}
+
+.href{
+    color: white;
+    transform: 5ms;
+}
+.href:hover{color: red;}
